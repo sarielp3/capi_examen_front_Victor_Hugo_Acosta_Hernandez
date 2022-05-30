@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipoService,usuario } from './Servicio/equipo.service';
+import { EquipoService,usuario } from '../../Servicio/equipo.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-tabla-usuarios',
+  templateUrl: './tabla-usuarios.component.html',
+  styleUrls: ['./tabla-usuarios.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'capiexamenfrontVictorHugoAcostaHernandez';
+export class TablaUsuariosComponent implements OnInit {
 
   Usuarios: usuario[] = [];
   constructor(private EquipoService:EquipoService) { }
 
   ngOnInit(): void {
     this.getusers();
-    
   }
 
   getusers(){
@@ -26,4 +24,5 @@ export class AppComponent implements OnInit {
       err => console.log(err)
     );
   }
+
 }
